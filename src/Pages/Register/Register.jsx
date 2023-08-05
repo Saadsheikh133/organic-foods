@@ -55,7 +55,7 @@ const Register = () => {
     };
     return (
         <div>
-            <div className="hero min-h-screen ">
+            <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse w-full">
                     <div className="text-center lg:w-1/2">
                         <img className="lg:h-[850px] lg:ml-10 object-cover w-full rounded-xl" src={authentication} alt="" />
@@ -102,7 +102,7 @@ const Register = () => {
                             </div>
                             <p className="">All ready have an account? <Link className="hover:underline hover:text-orange-600" to="/login">Login Now</Link></p>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Register" />
+                                <input className="btn text-white bg-orange-500 hover:text-orange-400" type="submit" value="Register" />
                             </div>
                             {/* <SocialLogin></SocialLogin> */}
                             <p className="text-red-600 my-4">{error}</p>

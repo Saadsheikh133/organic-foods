@@ -36,7 +36,7 @@ const Login = () => {
     }
     return (
         <div>
-            <div className="hero min-h-screen ">
+            <div className="hero min-h-screen  pt-20">
                 <div className="hero-content flex-col lg:flex-row-reverse w-full">
                     <div className="text-center lg:text-left lg:w-1/2">
                         <img className="rounded-xl lg:ml-10" src={authentication} alt="" />
@@ -65,7 +65,7 @@ const Login = () => {
                             </div>
                             <p className="">New to this site? <Link className="hover:underline hover:text-orange-600" to="/register">Create Account</Link></p>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Login" />
+                                <input className="btn text-white bg-orange-500 hover:text-orange-400" type="submit" value="Login" />
                             </div>
                             {/* <SocialLogin></SocialLogin> */}
                             <p className="text-red-600 my-4">{error}</p>
