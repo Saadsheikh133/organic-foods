@@ -1,7 +1,6 @@
 
 
 const SingleCard = ({ food }) => {
-    console.log(food)
     const { name, price, img, rating } = food;
     return (
         <div>

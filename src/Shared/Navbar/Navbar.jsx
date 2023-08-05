@@ -6,6 +6,7 @@ const Navbar = () => {
     const items = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link>Products</Link></li>
+        <li><Link to="/register">Register</Link></li>
     </>
     return (
         <div className="">
