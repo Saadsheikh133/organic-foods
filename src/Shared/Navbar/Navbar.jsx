@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useUserRole from "../../Hooks/useUserRole/useUserRole";
 
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [users] = useUserRole();
 
     const handleLogOut = () => {
         logOut()
@@ -15,8 +17,13 @@ const Navbar = () => {
     const items = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to="/allFoods">All Foods</Link></li>
-        <li><Link to="/addFood">Add Food</Link></li>
-        <li><Link to="/manageUsers">Manage Users</Link></li>
+        {
+            users?.role === 'admin' &&
+            <>
+                <li><Link to="/addFood">Add Food</Link></li>
+                <li><Link to="/manageUsers">Manage Users</Link></li>
+            </>
+        }
         <li><Link>Contact+</Link></li>
 
     </>
@@ -33,11 +40,11 @@ const Navbar = () => {
                             {items}
                         </ul>
                     </div>
-                    <a className="normal-case lg:text-4xl font-bold text-xl">Healthy Organic foods</a>
+                    <a className="normal-case lg:text-4xl font-bold text-xl text-orange-500">Healthy Organic foods</a>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
-                    <ul className="menu hover:text-orange-500 text-2xl menu-horizontal px-1">
-                       {items}
+                    <ul className="menu hover:text-orange-500 text-xl menu-horizontal px-1">
+                        {items}
                     </ul>
                 </div>
                 <div className="navbar-end">

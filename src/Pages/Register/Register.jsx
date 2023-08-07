@@ -16,7 +16,6 @@ const Register = () => {
 
     const onSubmit = data => {
         console.log(data.password, data.confirm_password,)
-        console.log(data)
         if (data.password === data.confirm_password) {
             setError('');
             signUpUser(data.email, data.password)
