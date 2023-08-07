@@ -25,8 +25,8 @@ const AddFood = () => {
             .then(imgResponse => {
                 if (imgResponse) {
                     const imgURL = imgResponse.data.display_url;
-                    const { name, price, quantity, category, admin, email } = data;
-                    const newItem = { name, price: parseFloat(price), category, image: imgURL, quantity: parseFloat(quantity), admin, email }
+                    const { name, price, quantity, category, admin, email, rating } = data;
+                    const newItem = { name, price: parseFloat(price), category, image: imgURL, quantity: parseFloat(quantity), admin, email, rating }
                     axiosSecure.post('/addFood', newItem)
                         .then(data => {
                             if (data.data.insertedId) {
@@ -86,15 +86,26 @@ const AddFood = () => {
                                     <input type="number" placeholder="price" className="input input-bordered" {...register("price", { required: true, maxLength: 80 })} />
                                 </div>
                             </div>
-                            <div className="form-control mt-2">
-                                <select className='py-2 px-2 w-full input input-bordered' defaultValue="Pick One" {...register("category", { required: true })}>
-                                    <option disabled >Pick One</option>
-                                    <option value="nutts">Nutt & Seeds</option>
-                                    <option value="fruits">Fresh Fruits</option>
-                                    <option value="dried">Dried</option>
-                                    <option value="food">Food</option>
-                                </select>
-                            </div>
+                            <div className="flex justify-evenly gap-2">
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Category</span>
+                                    </label>
+                                    <select className='px-2 w-full input input-bordered' defaultValue="Pick One" {...register("category", { required: true })}>
+                                        <option disabled >Pick One</option>
+                                        <option value="nutts">Nutt & Seeds</option>
+                                        <option value="fruits">Fresh Fruits</option>
+                                        <option value="dried">Dried</option>
+                                        <option value="food">Food</option>
+                                    </select>
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Rating</span>
+                                    </label>
+                                    <input type="number" placeholder="rating" className="input input-bordered" {...register("rating", { required: true, maxLength: 20 })} />
+                                </div>
+                           </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Food Image</span>

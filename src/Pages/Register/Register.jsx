@@ -32,7 +32,7 @@ const Register = () => {
                     })
                     updateUserProfile(data.name, data.image)
                         .then(() => {
-                            const saveUser = { name: data.name, email: data.email, role: 'student' }
+                            const saveUser = { name: data.name, email: data.email, role: 'customer' }
                             axiosSecure.post('/addUsers', saveUser)
                                 .then(data => {
                                     if (data.data.insertedId) {
