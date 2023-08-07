@@ -5,6 +5,7 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import AddFood from "../Pages/AddFood/AddFood";
 import AllFoods from "../Pages/AllFoods/AllFoods";
+import ManageUser from "../Pages/DashBoard/Admin/Manageuser/ManageUser";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: 'allFoods',
                 element: <AllFoods></AllFoods>
+            },
+            {
+                path: 'manageUsers',
+                element: <ManageUser></ManageUser>
             }
         ]
     }

@@ -16,12 +16,14 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to="/allFoods">All Foods</Link></li>
         <li><Link to="/addFood">Add Food</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/manageUsers">Manage Users</Link></li>
+        <li><Link>Contact+</Link></li>
+
     </>
 
     return (
         <div className="">
-            <div className="navbar text-white glass fixed z-10">
+            <div className="navbar bg-slate-300 glass fixed z-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

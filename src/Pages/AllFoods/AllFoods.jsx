@@ -6,10 +6,6 @@ const AllFoods = () => {
     const [AllFoods, setAllFoods] = useState([]);
     const [show, setShow] = useState(true);
 
-    const handleShowCard = () => {
-        AllFoods.slice(0 - 6)
-        setShow()
-    }
 
     useEffect(() => {
         fetch("http://localhost:5000/freshFoods")

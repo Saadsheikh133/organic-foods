@@ -2,7 +2,6 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
 const FoodCategory = ({ food }) => {
-    console.log(food)
     const { image, name, price, quantity, category, rating } = food;
     return (
         <div className="card card-compact h-96 bg-base-100 shadow-xl">
